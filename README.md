@@ -1,4 +1,4 @@
-# Proyecto-TFG-ASIR**# Proyecto TFG ASIR - BBDD Distribuida con Réplica y Alta Disponibilidad (HA)
+# Proyecto TFG ASIR - BBDD Distribuida con Réplica y Alta Disponibilidad (HA)
 
 Este repositorio contiene la infraestructura completa para desplegar un sistema de base de datos PostgreSQL distribuida con réplica asincrónica, alta disponibilidad mediante HAProxy, y monitorización con Prometheus y Grafana
 
