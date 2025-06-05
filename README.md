@@ -64,9 +64,16 @@ chmod +x scripts/init-primary.sh scripts/init-replica.sh docker-compose.yml
 
 ### 4. Levantar los contenedores
 
-```bash
-docker compose up -d
+Se levanta los distintos contenedores por fases
 
+```bash
+docker-compose up -d postgres-primary
+
+docker-compose up -d postgres-replica1 postgres-replica2
+
+docker-compose up -d haproxy
+
+docker-compose up -d prometheus grafana postgres_exporter
 ```
 
 Verifica que todos los servicios estén corriendo:
