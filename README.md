@@ -59,10 +59,30 @@ mkdir -p data/{primary,replica1,replica2}
 chmod +x scripts/init-primary.sh scripts/init-replica.sh docker-compose.yml
 
 ```
+### 4. Habilitar los puertos 
 
+```bash
+sudo apt install -y ufw
+
+# Configurar reglas básicas
+sudo ufw allow ssh
+sudo ufw allow 5432/tcp  # PostgreSQL
+sudo ufw allow 5433/tcp  # PostgreSQL Replica 1
+sudo ufw allow 5434/tcp  # PostgreSQL Replica 2
+sudo ufw allow 5435/tcp  # HAProxy principal
+sudo ufw allow 5436/tcp  # HAProxy lectura
+sudo ufw allow 8404/tcp  # HAProxy stats
+sudo ufw allow 9090/tcp  # Prometheus
+sudo ufw allow 3000/tcp  # Grafana
+sudo ufw allow 9187/tcp  # Postgres exporter
+
+# Activar firewall
+sudo ufw enable
+
+```
 > Añade aquí otros scripts si fuera necesario, por ejemplo: `chmod +x start.sh`
 
-### 4. Levantar los contenedores
+### 5. Levantar los contenedores
 
 Se levanta los distintos contenedores por fases
 
